@@ -12,7 +12,12 @@ class StudentButtonComponent extends Component {
         console.log(student)
         return(
             <View>
-                <Button title={this.props.StudentData.name}></Button>
+                <Button
+                    title={student.name}
+                    onPress={() => this.props.navigate('Detail', {
+                        studentData: student
+                    })}
+                />
             </View>
         );
     }
