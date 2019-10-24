@@ -8,7 +8,7 @@ class StudentButtonComponent extends Component {
     }
 
     render() {
-        student = this.props.StudentData;
+        let student = this.props.StudentData;
         console.log(student)
         return(
             <View>
