@@ -16,13 +16,14 @@ class TableView extends Component {
     readStudentsData = () => {
         firebase.database().ref('cmghybridproject/').once('value', (snapshot) => {
             this.setState({ students: snapshot.val() }, () => {
+                console.log("here the states");
                 console.log(this.state.students);
             })
         });
     };
 
     render() {
-        students = this.state.students
+        let students = this.state.students
         return (
             <View style={styles.container}>
                 {students.map(student => {
