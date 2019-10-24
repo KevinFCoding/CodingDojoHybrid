@@ -7,6 +7,18 @@ import TableView from './Views/TableView'
 import DetailView from './Views/DetailView'
 import StudentChangeView from "./Views/StudentChangeView";
 
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBq5BstxwpBAWKJNWKT8UcJ8tW0TKxofBo",
+  authDomain: "cmghybridproject.firebaseapp.com",
+  databaseURL: "https://CMGHybridProject.firebaseio.com",
+  storageBucket: "cmghybridproject.appspot.com"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 export default class App extends Component {
   render() {
     return <AppContainer />;
