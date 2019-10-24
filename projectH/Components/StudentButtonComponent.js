@@ -1,23 +1,28 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Button } from 'react-native'
+import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
 
 class StudentButtonComponent extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            URL: 'https://images.emojiterra.com/google/android-pie/512px/1f432.png'
+        }
     }
 
     render() {
         let student = this.props.StudentData;
-        console.log(student)
-        return(
+        img = { uri: this.state.URL }
+        return (
             <View>
-                <Button
-                    title={student.name}
+                <TouchableOpacity
+                    activeOpacity={.5}
                     onPress={() => this.props.navigate('Detail', {
                         studentData: student
-                    })}
-                />
+                    })}>
+                    <Image source={img} style={{ width: 100, height: 100 }}/>
+                    <Text>{student.name} {student.lastname}</Text>
+                </TouchableOpacity>
             </View>
         );
     }
