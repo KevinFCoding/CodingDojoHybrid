@@ -10,14 +10,17 @@ class TableView extends Component {
         this.state = { 
             students: [
                 {
+                    key: 1,
                     name: 'Kevin',
                     lastname: 'Fagot'
                 },
                 {
+                    key: 2,
                     name: 'Tom',
                     lastname: 'Duverdier'
                 },
                 {
+                    key: 3,
                     name: 'Sushi',
                     lastname: 'Kucukoglu'
                 }
@@ -32,7 +35,7 @@ class TableView extends Component {
         return(
             <View>
                 {students.map(student => {
-                    return <StudentButton StudentData={student}></StudentButton>
+                    return <StudentButton key={student.key} StudentData={student} navigate={this.props.navigation.navigate}></StudentButton>
                 })}
             </View>
         );
