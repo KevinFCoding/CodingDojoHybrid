@@ -1,12 +1,10 @@
 import {Component} from 'react-native';
 
-class AppStudentView extends Component{
+class StudentDetailsComponent extends Component{
     
     constructor(props){
         super(props);
     }
-
-    
 
 
 }
