@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Button } from 'react-native'
+import Image from "react-native-web/dist/exports/Image";
 
 class StudentButtonComponent extends Component {
 
@@ -9,13 +10,13 @@ class StudentButtonComponent extends Component {
 
     render() {
         let student = this.props.StudentData;
-        console.log(student)
+        console.log(student.name);
         return(
             <View>
                 <Button
                     title={student.name}
                     onPress={() => this.props.navigate('Detail', {
-                        studentData: student
+                        StudentData: student
                     })}
                 />
             </View>

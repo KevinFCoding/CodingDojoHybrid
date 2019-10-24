@@ -7,7 +7,7 @@ const initialStudent = {
     firstname: '',
     img: '',
     group: ''
-};
+}
 
 
 const store = createStore(combineForms({
