@@ -51,7 +51,7 @@ export default class TableView extends Component {
     }
 
     render() {
-        let students = this.state.students
+        students = this.state.students
         return (
             <View style={styles.container}>
                 {students.map(student => {
@@ -60,6 +60,9 @@ export default class TableView extends Component {
 
                 <View>
                     <StudentAdd studentData="null" navigate={this.props.navigation.navigate}/>
+                </View>
+                <View style={styles.buttonAdd}>
+                    <StudentAdd StudentData="null" navigate={this.props.navigation.navigate} />
                 </View>
             </View>
         );
@@ -70,8 +73,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    itemList: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly'
     },
+    buttonAdd: {
+        marginBottom: 30
+    }
 });
