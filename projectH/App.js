@@ -6,6 +6,7 @@ import HomePageView from './Views/HomePageView'
 import TableView from './Views/TableView'
 import DetailView from './Views/DetailView'
 import StudentChangeView from "./Views/StudentChangeView";
+import {Firebase as firebase} from "react-native-firebase";
 
 export default class App extends Component {
   render() {

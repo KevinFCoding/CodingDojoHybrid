@@ -18,8 +18,8 @@ firebase.initializeApp(firebaseConfig);
 
 class TableView extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.state = {
             students: [
                 {
@@ -59,6 +59,7 @@ class TableView extends Component {
                 }
             ]
         }
+        this.readStudentsData();
     }
 
     // readStudentsData = () => {
@@ -70,14 +71,14 @@ class TableView extends Component {
     // };
 
     render() {
-        console.log(this.state.students)
         students = this.state.students
         return (
             <View style={styles.container}>
-                <View style={styles.itemList}>
-                    {students.map(student => {
-                        return <StudentButton key={student.key} StudentData={student} navigate={this.props.navigation.navigate}></StudentButton>
-                    })}
+                {students.map(student => {
+                    return <StudentButton key={student.key} StudentData={student} navigate={this.props.navigation.navigate}></StudentButton>
+                })}
+                <View>
+                    <StudentAdd StudentData="null" navigate={this.props.navigation.navigate}/>
                 </View>
                 <View style={styles.buttonAdd}>
                     <StudentAdd StudentData="null" navigate={this.props.navigation.navigate} />
