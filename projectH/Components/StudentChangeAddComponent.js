@@ -9,15 +9,13 @@ export default class StudentChangeAddComponent extends Component{
 
     render() {
 
-        let student = this.props.StudentData;
-
         return (
 
             <View>
                 <Button
                     title= "Edit"
-                    onPress={() => this.props.navigate('StudentChange', {
-                        StudentData: student
+                    onPress={() => this.props.navigate('StudentChangeView', {
+                        studentData: this.props.studentData
                     })}
                 />
             </View>

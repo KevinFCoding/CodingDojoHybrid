@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, TextInput, Button } from 'react-native';
-import {Firebase as firebase} from "react-native-firebase";
 
-class HomePageView extends Component {
+export default class HomePageView extends Component {
 
     constructor(props) {
         super(props);
@@ -33,18 +32,12 @@ class HomePageView extends Component {
 
     login = () => {
         if(this.state.usernameInput === '' && this.state.passwordInput === ''){
-            this.props.navigation.navigate('Table')
+            this.props.navigation.navigate('TableView')
         } else {
-            firebase.auth().signInWithEmailAndPassword(this.state.usernameInput, this.state.passwordInput).then(() => {
-                this.props.navigation.navigate('Table')
-            }).catch((error) => {
-               console.log(error); 
-            });
+            this.props.navigation.navigate('TableView')
         }
     };
 }
-
-export default HomePageView;
 
 const styles = StyleSheet.create({
     container: {

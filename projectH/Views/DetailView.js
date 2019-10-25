@@ -1,21 +1,15 @@
 import React, { Component } from 'react'
 import {View, Text, Image, StyleSheet} from 'react-native'
 import StudentEdit from "../Components/StudentChangeAddComponent";
-import StudentButton from "../Components/StudentButtonComponent";
-// import Image from "react-native-web/dist/exports/Image";
 
-class DetailView extends Component {
-
+export default class DetailView extends Component {
     constructor(props) {
         super(props);
     }
 
-
-
     render() {
 
-        let student = this.props.navigation.getParam('StudentData');
-        console.log(student);
+        let student = this.props.navigation.getParam('studentData');
         return(
             <View styles={styles.container}>
                 <Image source={{uri : student.img}}/>
@@ -26,15 +20,13 @@ class DetailView extends Component {
                 </Text>
 
                 <View>
-                    <StudentEdit StudentData={student} navigate={this.props.navigation.navigate}/>
+                    <StudentEdit studentData={student} navigate={this.props.navigation.navigate}/>
                 </View>
 
             </View>
         );
     }
 }
-
-export default DetailView;
 
 const styles = StyleSheet.create({
     container: {
@@ -43,6 +35,4 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-
-
 });

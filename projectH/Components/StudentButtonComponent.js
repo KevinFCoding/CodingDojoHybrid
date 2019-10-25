@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import Image from "react-native-web/dist/exports/Image";
-import {View, Text, TouchableOpacity } from 'react-native'
+import {View, Text, TouchableOpacity, Image } from 'react-native'
 
-class StudentButtonComponent extends Component {
+export default class StudentButtonComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -12,21 +11,20 @@ class StudentButtonComponent extends Component {
     }
 
     render() {
-        let student = this.props.StudentData;
-        img = { uri: this.state.URL }
+        let student = this.props.studentData;
+        img = { uri: student.img }
+        console.log(img);
         return (
             <View>
                 <TouchableOpacity
                     activeOpacity={.5}
-                    onPress={() => this.props.navigate('Detail', {
+                    onPress={() => this.props.navigate('DetailView', {
                         studentData: student
                     })}>
-                    <Image source={img} style={{ width: 100, height: 100 }}/>
+                    <Image source={img}/>
                     <Text>{student.name} {student.lastname}</Text>
                 </TouchableOpacity>
             </View>
         );
     }
 }
-
-export default StudentButtonComponent;
