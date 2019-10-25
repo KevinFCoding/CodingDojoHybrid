@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import { StyleSheet, View, TextInput, Button } from 'react-native'
-
-import * as firebase from 'firebase';
+import React, { Component } from 'react';
+import { StyleSheet, View, TextInput, Button } from 'react-native';
+import {Firebase as firebase} from "react-native-firebase";
 
 class HomePageView extends Component {
 
@@ -19,11 +18,11 @@ class HomePageView extends Component {
                 <TextInput placeholder="Email input"
                     onChangeText={(text) => { this.setState({ usernameInput: text }) }}
                     style={styles.textInput}
-                ></TextInput>
+                />
                 <TextInput placeholder="Password input"
                     onChangeText={(text) => { this.setState({ passwordInput: text }) }}
                     style={styles.textInput}
-                ></TextInput>
+                />
                 <Button
                     title="Validate"
                     onPress={() => this.login()} 
@@ -33,7 +32,7 @@ class HomePageView extends Component {
     }
 
     login = () => {
-        if(this.state.usernameInput == '' && this.state.passwordInput == ''){
+        if(this.state.usernameInput === '' && this.state.passwordInput === ''){
             this.props.navigation.navigate('Table')
         } else {
             firebase.auth().signInWithEmailAndPassword(this.state.usernameInput, this.state.passwordInput).then(() => {

@@ -6,11 +6,12 @@ import StudentAdd from "../Components/StudentChangeAddComponent";
 
 class TableView extends Component {
 
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
         this.state = {
             students: {} 
         }
+        this.readStudentsData();
     }
 
     readStudentsData = () => {
@@ -27,7 +28,7 @@ class TableView extends Component {
         return (
             <View style={styles.container}>
                 {students.map(student => {
-                    return <StudentButton key={student.key} StudentData={student} navigate={this.props.navigation.navigate}></StudentButton>
+                    return <StudentButton key={student.key} StudentData={student} navigate={this.props.navigation.navigate}/>
                 })}
                 <View>
                     <StudentAdd StudentData="null" navigate={this.props.navigation.navigate}/>

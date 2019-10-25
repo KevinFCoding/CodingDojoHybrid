@@ -6,8 +6,7 @@ import HomePageView from './Views/HomePageView'
 import TableView from './Views/TableView'
 import DetailView from './Views/DetailView'
 import StudentChangeView from "./Views/StudentChangeView";
-
-import * as firebase from 'firebase';
+import {Firebase as firebase} from "react-native-firebase";
 
 // Initialize Firebase
 const firebaseConfig = {

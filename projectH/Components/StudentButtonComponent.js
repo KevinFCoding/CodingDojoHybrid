@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Image from "react-native-web/dist/exports/Image";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import {View, Text, TouchableOpacity } from 'react-native'
 
 class StudentButtonComponent extends Component {
 
