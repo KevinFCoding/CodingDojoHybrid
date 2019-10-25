@@ -15,7 +15,7 @@ export default class StudentChangeAddComponent extends Component{
 
             <View>
                 <Button
-                    title= "Edit"
+                    title= "add new player"
                     onPress={() => this.props.navigate('StudentChange', {
                         StudentData: student
                     })}
